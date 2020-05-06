@@ -253,6 +253,24 @@ def show_data (df,city, month, day):
                     break
                 else:
                     print('\n{} not a valid awnser\n'.format(list_inpu[i]))
+                    for i in range(length):
+                        for filter in chucker(filters):
+                            if list_inpu[i] in filters:
+                                if data_functions[list_inpu[i]] == 'time_stats(df, month, day)':
+                                    time_stats(df, month, day)
+                                elif data_functions[list_inpu[i]] == 'station_stats(df)':
+                                    station_stats(df)
+                                elif data_functions[list_inpu[i]] == 'trip_duration_stats(df)':
+                                    trip_duration_stats(df)
+                                elif data_functions[list_inpu[i]] == 'user_stats(df, city)':
+                                    user_stats(df, city)
+                                break
+                            elif list_inpu[i] == 'all':
+                                time_stats(df, month, day)
+                                station_stats(df)
+                                trip_duration_stats(df)
+                                user_stats(df, city)
+                                break
                 break
         break
 
