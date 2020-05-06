@@ -261,7 +261,7 @@ def chucker(iterable):
             yield iterable[i:i + 5]
 
 def pro_input(raw_input):
-#Variable to process de raw input
+#This variable aim to process the raw input, this way we can work better in the data filter(show_data)
     raw_input = raw_input.lower()
     string_proc = raw_input.replace(', ', ',')
     string_proc = string_proc.replace(' and ', ',')
