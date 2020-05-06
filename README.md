@@ -1,15 +1,19 @@
 ### Date created
-Include the date you created this project and README file.
+Date of creation:
+Files: 05/06/2020
+README: 05/06/2020
 
 ### Project Title
-Replace the Project Title
+Bikeshare Statistics
 
 ### Description
-Describe what your project is about and what it does
+This program process statatitics for the data on the bikeshare in tree citys: New York, Chicago and Washington
 
 ### Files used
-Include the files used
+chicago.csv
+new_york_city.csv
+washington.csv
+bikeshare_2.py
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Credits: Udacity
