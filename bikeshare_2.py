@@ -17,6 +17,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!\n')
+    print('Let\'s start_time!\n')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = ''
     while city == '' or city.lower() != 'Chicago'.lower() or city.lower() != 'New York'.lower() or city.lower() != 'Washington'.lower():
@@ -252,6 +253,24 @@ def show_data (df,city, month, day):
                     break
                 else:
                     print('\n{} not a valid awnser\n'.format(list_inpu[i]))
+                    for i in range(length):
+                        for filter in chucker(filters):
+                            if list_inpu[i] in filters:
+                                if data_functions[list_inpu[i]] == 'time_stats(df, month, day)':
+                                    time_stats(df, month, day)
+                                elif data_functions[list_inpu[i]] == 'station_stats(df)':
+                                    station_stats(df)
+                                elif data_functions[list_inpu[i]] == 'trip_duration_stats(df)':
+                                    trip_duration_stats(df)
+                                elif data_functions[list_inpu[i]] == 'user_stats(df, city)':
+                                    user_stats(df, city)
+                                break
+                            elif list_inpu[i] == 'all':
+                                time_stats(df, month, day)
+                                station_stats(df)
+                                trip_duration_stats(df)
+                                user_stats(df, city)
+                                break
                 break
         break
 
@@ -279,9 +298,26 @@ def main():
         show_data (df,city, month, day)
         raw_data(df, city)
 
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        if restart.lower() == 'yes' or restart.lower() == 'y':
+            continue
+        elif restart.lower() == 'no' or restart.lower() == 'n':
             break
+        else:
+            print("{} isn't a valid awnser".format(restart.title()))
+            while True:
+                restart = input('\nWould you like to restart? Enter yes or no.\n')
+                if restart.lower() != 'yes' or restart.lower() != 'y':
+                    print("{} isn't a valid awnser".format(restart.title()))
+                elif restart.lower() == 'no' or restart.lower() == 'n':
+                    break
+                else:
+                    break
+                break
+
+
+
 
 
 if __name__ == "__main__":
