@@ -279,9 +279,26 @@ def main():
         show_data (df,city, month, day)
         raw_data(df, city)
 
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        if restart.lower() == 'yes' or restart.lower() == 'y':
+            continue
+        elif restart.lower() == 'no' or restart.lower() == 'n':
             break
+        else:
+            print("{} isn't a valid awnser".format(restart.title()))
+            while True:
+                restart = input('\nWould you like to restart? Enter yes or no.\n')
+                if restart.lower() != 'yes' or restart.lower() != 'y':
+                    print("{} isn't a valid awnser".format(restart.title()))
+                elif restart.lower() == 'no' or restart.lower() == 'n':
+                    break
+                else:
+                    break
+                break
+
+
+
 
 
 if __name__ == "__main__":
